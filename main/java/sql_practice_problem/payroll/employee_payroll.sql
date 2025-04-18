@@ -96,14 +96,6 @@ mysql> ALTER TABLE employee_payroll ADD (PhoneNO int(10), Address varchar(255), 
 Query OK, 0 rows affected, 1 warning (0.06 sec)
 Records: 0  Duplicates: 0  Warnings: 1
 
-mysql> ALTER TABLE employee_payroll DELETE PhoneNO int(10), Address varchar(255), Department varchar(255);  
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DELETE PhoneNO int(10), Address varchar(255), Department varchar(255)' at line 1
-mysql> Terminal close -- exit!
-mysql> select * from employee_payroll
-    -> ;
-ERROR 1046 (3D000): No database selected
-mysql> use payroll_service
-Database changed
 mysql> select * from employee_payroll;
 +------+--------+--------+------------+--------+---------+---------+------------+
 | ID   | Name   | Salary | StartDate  | Gender | PhoneNO | Address | Department |
@@ -146,8 +138,7 @@ mysql> show tables;
 +---------------------------+
 1 row in set (0.04 sec)
 
-mysql> select * from users;
-ERROR 1146 (42S02): Table 'payroll_service.users' doesn't exist
+
 mysql> select * from employee_payroll;
 +------+---------+--------+------------+--------+---------+---------+------------+----------+------------+------------+-----------+--------+
 | ID   | Name    | Salary | StartDate  | Gender | PhoneNO | Address | Department | BasicPay | Deductions | TexablePay | IncomeTax | NetPay |
